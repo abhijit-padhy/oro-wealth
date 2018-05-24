@@ -1,0 +1,95 @@
+<html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="author" content="Abhijit Padhy">
+
+<head>
+    <link rel="stylesheet" href="./scripts/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<script type="text/javascript" src="./scripts/jquery-3.3.1.min.js"></script>
+<script src="./scripts/angular.min.js"></script>
+<script src="./scripts/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+<script src="./scripts/module.js"></script>
+
+<body ng-app="app" ng-controller="ctrl">
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li ng-class="{active: flag==true}"><a data-toggle="tab" href="#info">
+          <span class="monogram">1</span><h3>Personal</h3></a></li>
+        <li ng-class="{active: flag==false}"><a data-toggle="tab" href="#list">
+          <span class="monogram">2</span><h3>List</h3></a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="info" class="tab-pane fade in" ng-class="{active: flag==true}">
+          <div class="info-container">
+            <div class="info-title"><h2>Personal</h2></div>
+            <div class="info-data form-group">
+              <div class="info-name">
+                <label>Name</label>
+                <div><input ng-model="user.name" placeholder="Name"/></div>
+              </div>
+            </div>
+            <div class="info-data form-group">
+                <div class="info-name">
+                  <label>Phone Number</label>
+                  <div><input ng-model="user.phone" placeholder="Phone Number"/></div>
+                </div>
+            </div>
+            <div class="info-social row">
+                <div class="info-data form-group col-md-4">
+                    <div class="info-name">
+                      <label>Faceboook Profile</label>
+                      <div><input ng-model="user.fb" placeholder="www.facebook.com/johndoe"/></div>
+                    </div>
+                  </div>
+                  <div class="info-data form-group col-md-4">
+                      <div class="info-name">
+                        <label>Twitter Profile</label>
+                        <div><input ng-model="user.tw" placeholder="www.twitter.com/johndoe"/></div>
+                      </div>
+                    </div>
+                    <div class="info-data form-group col-md-4">
+                        <div class="info-name">
+                          <label>LinkedIn Profile</label>
+                          <div><input ng-model="user.link" placeholder="www.linkedin.com/johndoe"/></div>
+                        </div>
+                      </div>
+            </div>
+          </div>
+          <div class="info-btn" style="text-align: right;">
+            <button class="btn btn-primary" ng-click="save()">SAVE</button>
+            <button class="btn btn-primary" ng-click="next()">NEXT</button>
+          </div>
+        </div>
+        <div id="list" class="tab-pane fade in" ng-class="{active: flag==false}">
+          <div class="info-container row">
+            <div class="info-box col-md-4 col-sm-4" ng-repeat="row in userList track by $index">
+                <div class="info-btn" style="text-align: right;">
+                  <a ng-click="edit(row)">Edit</a>
+                  <a ng-click="delete($index)">Delete</a>
+                </div>
+                <div class="info-data">
+                  <div class="img">
+                    <img src="./assets/demo.jpg" />
+                  </div>
+                  <div class="img">
+                    <div class="name">{{row.name}}</div>
+                    <div class="email"><a>{{row.fb}}</a></div>
+                  </div>
+                </div>
+            </div>
+            <div class="info-box add-member col-md-4 col-sm-4" ng-click="add()">
+              <div class="add-icon"><h2>+</h2></div>
+              <div style="text-align: center;">Add Family Member</div>
+            </div>
+          </div>
+          <div class="hint">
+            <h2>Add a family member or click next to go to next step.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

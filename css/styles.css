@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+body {
+    font-family: 'Raleway', sans-serif;
+}
+.monogram{
+    padding: 5px;
+    border: 1px solid #ccc;
+    background: #ccc;
+    border-radius: 15px;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    text-align: center;
+    color: white;
+}
+.nav-tabs h3{
+    display: inline-block;
+    padding-left: 5px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    border: none;
+    border-bottom: 1px solid #0096ff;
+    color: #0096ff;
+}
+.nav-tabs>li.active>a .monogram{
+    background: #0096ff;
+}
+
+.info-social .info-data{
+    display: inline-block;
+}
+.form-group label, .form-group input{
+    padding: 5px;
+}
+.info-title h2{
+    width: 170px;
+    background: #318ae8;
+    padding: 5px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.info-box{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    height: 100px;
+    /*display: inline-block;
+    width: 20em; */
+}
+.info-box .info-btn a, .img a{
+    padding: 5px;
+    font-size: 10px;
+    color: #ccc;
+}
+.img img{
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+}
+.info-data .img{
+    display: inline-block;
+}
+.info-data .img:nth-child(2){
+    vertical-align: middle;
+    padding: 5px;
+}
+.add-icon{
+    text-align: center;
+}
+/* .add-member{
+    float: right;
+    clear: both;
+} */
